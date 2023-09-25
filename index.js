@@ -12,11 +12,18 @@ config({
 
 //middlewares
 app.use(express.json()); // position is important
+app.use(
+    cors({
+      origin: [process.env.FRONTEND_URL],
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    })
+  );
 app.use(router)
-app.use(cors())
+// app.use(cors())
 
 connnectDb();
 
 app.listen(process.env.PORT,()=>{
-    console.log(`Server is running on: ${process.env.PORT} `)
+    console.log(`Server is running on: ${process.env.PORT}`)
 })

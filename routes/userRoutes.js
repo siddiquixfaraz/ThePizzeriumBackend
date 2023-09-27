@@ -6,7 +6,7 @@ import  jwt  from "jsonwebtoken";
 
 const router = express.Router();
 
-router.get("/userDetail",(req,res)=>{
+router.get("/detail",(req,res)=>{
     res.json({
         "message" : "CREATED SUCCESSFULLY"
     });
